@@ -20,7 +20,7 @@ const Hero = () => {
               <p className="text-xl text-compass-purple-darkest font-medium mt-2 md:mt-4">
                 "AI 시대에도 나만의 방향을 잃지 않도록"
               </p>
-              <p className="max-w-[700px] text-muted-foreground md:text-xl mt-4">
+              <p className="max-w-[700px] text-compass-neutral-gray md:text-xl mt-4">
                 자신만의 AI 시대 적응 및 성장 지도를 만들고, AI 시대의 불안감을 극복하며 건설적인 발전을 이루어 나가세요.
               </p>
             </div>

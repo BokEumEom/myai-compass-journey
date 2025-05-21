@@ -65,11 +65,11 @@ const RealityCheck = () => {
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-8">
           <h2 className="text-2xl md:text-3xl font-bold text-compass-purple-darkest mb-2">나의 현재 상태 체크리스트</h2>
-          <p className="text-muted-foreground">AI 시대에 얼마나 준비되어 있는지 확인해 보세요</p>
+          <p className="text-compass-neutral-gray">AI 시대에 얼마나 준비되어 있는지 확인해 보세요</p>
         </div>
 
         <div className="mb-8">
-          <div className="flex justify-between text-sm text-muted-foreground mb-2">
+          <div className="flex justify-between text-sm text-compass-neutral-gray mb-2">
             <span>질문 {currentQuestionIndex + 1} / {realityCheckQuestions.length}</span>
             <span>{Math.round(progress)}% 완료</span>
           </div>
@@ -82,7 +82,7 @@ const RealityCheck = () => {
               {realityCheckQuestions[currentQuestionIndex].question}
             </CardTitle>
             {realityCheckQuestions[currentQuestionIndex].description && (
-              <CardDescription className="text-muted-foreground mt-1">
+              <CardDescription className="text-compass-neutral-gray mt-1">
                 {realityCheckQuestions[currentQuestionIndex].description}
               </CardDescription>
             )}
@@ -96,7 +96,7 @@ const RealityCheck = () => {
                   className={`h-12 justify-start px-6 w-full ${
                     answers[currentQuestionIndex] === value 
                       ? "bg-compass-purple text-white hover:bg-compass-purple-dark" 
-                      : "text-compass-purple-darkest hover:bg-compass-soft-purple/20"
+                      : "text-compass-purple-darker hover:bg-compass-soft-purple/20"
                   }`}
                   onClick={() => handleAnswerSelect(value)}
                 >

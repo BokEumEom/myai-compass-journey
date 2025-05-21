@@ -34,7 +34,7 @@ const ResultsDisplay = ({ results, onReset }: ResultsDisplayProps) => {
             <Compass className="h-8 w-8 text-compass-purple" />
           </div>
           <h2 className="text-2xl md:text-3xl font-bold text-compass-purple-darkest mb-3">진단 결과</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-compass-neutral-gray max-w-2xl mx-auto">
             당신의 AI 시대 준비 상태를 분석하고 맞춤형 개발 방향을 제시해 드립니다.
           </p>
         </div>
@@ -43,7 +43,7 @@ const ResultsDisplay = ({ results, onReset }: ResultsDisplayProps) => {
           <Card className="border-compass-soft-purple shadow-md">
             <CardHeader>
               <CardTitle className="text-xl text-compass-purple-darkest">현재 상태</CardTitle>
-              <CardDescription>당신의 AI 시대 준비 상태입니다</CardDescription>
+              <CardDescription className="text-compass-cool-gray">당신의 AI 시대 준비 상태입니다</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="rounded-lg bg-compass-soft-purple p-6 mb-6">
@@ -53,8 +53,8 @@ const ResultsDisplay = ({ results, onReset }: ResultsDisplayProps) => {
               
               <div className="space-y-4">
                 <div>
-                  <h4 className="text-sm font-medium text-muted-foreground mb-2">총점</h4>
-                  <p className="text-3xl font-bold text-compass-purple">{results.score} <span className="text-sm text-muted-foreground font-normal">/ 25</span></p>
+                  <h4 className="text-sm font-medium text-compass-cool-gray mb-2">총점</h4>
+                  <p className="text-3xl font-bold text-compass-purple">{results.score} <span className="text-sm text-compass-neutral-gray font-normal">/ 25</span></p>
                 </div>
               </div>
             </CardContent>
@@ -63,7 +63,7 @@ const ResultsDisplay = ({ results, onReset }: ResultsDisplayProps) => {
           <Card className="border-compass-soft-purple shadow-md">
             <CardHeader>
               <CardTitle className="text-xl text-compass-purple-darkest">추천 액션 플랜</CardTitle>
-              <CardDescription>당신의 성장을 위한 맞춤형 행동 계획입니다</CardDescription>
+              <CardDescription className="text-compass-cool-gray">당신의 성장을 위한 맞춤형 행동 계획입니다</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
@@ -74,7 +74,7 @@ const ResultsDisplay = ({ results, onReset }: ResultsDisplayProps) => {
                     </div>
                     <div>
                       <h4 className="font-medium text-compass-purple-darker">{action.title}</h4>
-                      <p className="text-sm text-muted-foreground">{action.description}</p>
+                      <p className="text-sm text-compass-neutral-gray">{action.description}</p>
                       <div className="mt-2">
                         <span className={`inline-block px-2 py-1 text-xs rounded-full ${
                           action.difficulty === 'beginner' ? 'bg-green-100 text-green-800' :

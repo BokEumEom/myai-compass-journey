@@ -20,7 +20,7 @@ const FeatureCard = ({ title, description, icon: Icon, className }: FeatureCardP
           <Icon className="h-6 w-6 text-compass-purple" />
         </div>
         <h3 className="text-xl font-semibold text-compass-purple-darkest">{title}</h3>
-        <p className="text-muted-foreground">{description}</p>
+        <p className="text-compass-neutral-gray">{description}</p>
       </div>
     </div>
   );

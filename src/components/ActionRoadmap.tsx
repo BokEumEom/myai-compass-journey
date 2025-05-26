@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
@@ -22,6 +21,8 @@ import {
   Compass, 
   Star 
 } from "lucide-react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { actionRecommendations } from "@/utils/assessmentData";
 
 const difficultyLabels: Record<string, { color: string; label: string }> = {
@@ -46,8 +47,10 @@ const ActionRoadmap = () => {
     : allActions.filter(action => action.category === filter);
 
   return (
-    <div className="container mx-auto px-4 py-12 md:py-16">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-b from-compass-soft-purple to-white">
+      <Header />
+      
+      <div className="container mx-auto px-4 py-12 md:py-16">
         <div className="text-center mb-12">
           <div className="inline-flex items-center justify-center rounded-full bg-compass-soft-purple p-4 mb-4">
             <Compass className="h-8 w-8 text-compass-purple" />
@@ -241,6 +244,8 @@ const ActionRoadmap = () => {
           </TabsContent>
         </Tabs>
       </div>
+      
+      <Footer />
     </div>
   );
 };

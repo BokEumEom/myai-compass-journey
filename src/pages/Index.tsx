@@ -1,6 +1,6 @@
-
 import Hero from "@/components/Hero";
 import FeatureCard from "@/components/FeatureCard";
+import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { ListCheck, Rocket, TrendingUp, BookOpen } from "lucide-react";
@@ -9,36 +9,7 @@ import { Link } from "react-router-dom";
 const Index = () => {
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="sticky top-0 z-40 w-full border-b bg-white">
-        <div className="container flex h-16 items-center px-4 sm:px-6">
-          <div className="flex items-center space-x-2">
-            <ListCheck className="h-6 w-6 text-compass-purple" />
-            <span className="hidden font-bold sm:inline-block">MyAI Compass</span>
-          </div>
-          <div className="flex-1"></div>
-          <nav className="hidden gap-6 md:flex">
-            <Link to="/reality-check" className="text-sm font-medium text-muted-foreground transition-colors hover:text-compass-purple">
-              현재 상태 체크
-            </Link>
-            <Link to="/action-roadmap" className="text-sm font-medium text-muted-foreground transition-colors hover:text-compass-purple">
-              발전 가이드
-            </Link>
-            <Link to="/creative-quest" className="text-sm font-medium text-muted-foreground transition-colors hover:text-compass-purple">
-              창의적 성장 퀘스트
-            </Link>
-            <Link to="/about" className="text-sm font-medium text-muted-foreground transition-colors hover:text-compass-purple">
-              서비스 소개
-            </Link>
-          </nav>
-          <div className="flex items-center space-x-2 ml-4">
-            <Link to="/reality-check">
-              <Button className="bg-compass-purple hover:bg-compass-purple-dark">
-                진단 시작
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       <main className="flex-1">
         <Hero />
@@ -46,7 +17,7 @@ const Index = () => {
         <section className="container mx-auto px-4 py-16 md:py-24">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-compass-purple-darkest mb-3">AI 시대를 준비하는 나만의 나침반</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-compass-neutral-gray max-w-2xl mx-auto">
               MyAI Compass는 AI 시대에 적응하고 성장하는 맞춤형 여정을 제공합니다. 자신의 현재 위치를 파악하고 미래를 위한 길을 찾아보세요.
             </p>
           </div>

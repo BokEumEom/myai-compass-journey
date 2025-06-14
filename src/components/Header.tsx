@@ -12,6 +12,7 @@ const Header = () => {
     { name: "현재 상태 체크", href: "/reality-check" },
     { name: "발전 가이드", href: "/action-roadmap" },
     { name: "창의적 성장 퀘스트", href: "/creative-quest" },
+    { name: "나만의 보고서", href: "/self-report" },
     { name: "서비스 소개", href: "/about" },
   ];
 

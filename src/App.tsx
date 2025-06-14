@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound";
 import RealityCheck from "./components/RealityCheck";
 import ActionRoadmap from "./components/ActionRoadmap";
 import CreativeQuest from "./components/CreativeQuest";
+import SelfReport from "./pages/SelfReport";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/reality-check" element={<RealityCheck />} />
           <Route path="/action-roadmap" element={<ActionRoadmap />} />
           <Route path="/creative-quest" element={<CreativeQuest />} />
+          <Route path="/self-report" element={<SelfReport />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

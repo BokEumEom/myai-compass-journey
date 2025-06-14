@@ -1,3 +1,4 @@
+
 import Hero from "@/components/Hero";
 import FeatureCard from "@/components/FeatureCard";
 import Header from "@/components/Header";
@@ -23,26 +24,34 @@ const Index = () => {
           </div>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            <FeatureCard
-              title="현재 상태 체크리스트"
-              description="AI 시대에 얼마나 준비되어 있고, 어떤 부분이 불안 요인인지 파악하세요."
-              icon={ListCheck}
-            />
-            <FeatureCard
-              title="건설적 발전 가이드"
-              description="체크리스트 결과를 기반으로 한 개인 맞춤형 로드맵을 받아보세요."
-              icon={Rocket}
-            />
-            <FeatureCard
-              title="창의적 성장 퀘스트"
-              description="AI와 함께하며 나만의 강점을 키울 수 있는 퀘스트를 수행해보세요."
-              icon={TrendingUp}
-            />
-            <FeatureCard
-              title="나만의 보고서"
-              description="매달 자동으로 생성되는 나의 업스킬 및 적응 현황 리포트를 확인하세요."
-              icon={BookOpen}
-            />
+            <Link to="/reality-check" className="h-full block hover:shadow-lg transition-shadow duration-300 rounded-xl">
+              <FeatureCard
+                title="현재 상태 체크리스트"
+                description="AI 시대에 얼마나 준비되어 있고, 어떤 부분이 불안 요인인지 파악하세요."
+                icon={ListCheck}
+              />
+            </Link>
+            <Link to="/action-roadmap" className="h-full block hover:shadow-lg transition-shadow duration-300 rounded-xl">
+              <FeatureCard
+                title="건설적 발전 가이드"
+                description="체크리스트 결과를 기반으로 한 개인 맞춤형 로드맵을 받아보세요."
+                icon={Rocket}
+              />
+            </Link>
+            <Link to="/creative-quest" className="h-full block hover:shadow-lg transition-shadow duration-300 rounded-xl">
+              <FeatureCard
+                title="창의적 성장 퀘스트"
+                description="AI와 함께하며 나만의 강점을 키울 수 있는 퀘스트를 수행해보세요."
+                icon={TrendingUp}
+              />
+            </Link>
+            <Link to="/self-report" className="h-full block hover:shadow-lg transition-shadow duration-300 rounded-xl">
+              <FeatureCard
+                title="나만의 보고서"
+                description="매달 자동으로 생성되는 나의 업스킬 및 적응 현황 리포트를 확인하세요."
+                icon={BookOpen}
+              />
+            </Link>
           </div>
         </section>
 

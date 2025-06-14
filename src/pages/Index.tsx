@@ -1,4 +1,3 @@
-
 import Hero from "@/components/Hero";
 import FeatureCard from "@/components/FeatureCard";
 import Header from "@/components/Header";
@@ -70,11 +69,11 @@ const Index = () => {
                     AI 시대에 가장 중요한 것은 기술이 아니라 인간 고유의 창의성, 비판적 사고, 협업 능력입니다. 나만의 강점을 발견하고 키워보세요.
                   </p>
                   <div className="pt-4">
-                    <Link to="/reality-check">
-                      <Button className="bg-compass-purple hover:bg-compass-purple-dark">
+                    <Button asChild className="bg-compass-purple hover:bg-compass-purple-dark">
+                      <Link to="/reality-check">
                         지금 진단 시작하기
-                      </Button>
-                    </Link>
+                      </Link>
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -109,11 +108,11 @@ const Index = () => {
                 <p className="text-muted-foreground mb-4">
                   5분 안에 완료되는 간단한 체크리스트로 AI 시대에 대한 준비 상태를 확인해보세요.
                 </p>
-                <Link to="/reality-check">
-                  <Button variant="outline" className="border-compass-soft-purple text-compass-purple-darkest hover:bg-compass-soft-purple/20">
+                <Button asChild variant="outline" className="border-compass-soft-purple text-compass-purple-darkest hover:bg-compass-soft-purple/20">
+                  <Link to="/reality-check">
                     체크리스트 시작하기
-                  </Button>
-                </Link>
+                  </Link>
+                </Button>
               </div>
             </div>
             
@@ -126,11 +125,11 @@ const Index = () => {
                 <p className="text-muted-foreground mb-4">
                   체크리스트 결과를 바탕으로 개인화된 성장 로드맵과 실천 가능한 액션 플랜을 제공받으세요.
                 </p>
-                <Link to="/action-roadmap">
-                  <Button variant="outline" className="border-compass-soft-purple text-compass-purple-darkest hover:bg-compass-soft-purple/20">
+                <Button asChild variant="outline" className="border-compass-soft-purple text-compass-purple-darkest hover:bg-compass-soft-purple/20">
+                  <Link to="/action-roadmap">
                     로드맵 살펴보기
-                  </Button>
-                </Link>
+                  </Link>
+                </Button>
               </div>
             </div>
             
@@ -143,11 +142,11 @@ const Index = () => {
                 <p className="text-muted-foreground mb-4">
                   "나를 대체하지 못할 나다움"을 키우는 퀘스트를 수행하고 AI 시대의 준비를 완료하세요.
                 </p>
-                <Link to="/creative-quest">
-                  <Button variant="outline" className="border-compass-soft-purple text-compass-purple-darkest hover:bg-compass-soft-purple/20">
+                <Button asChild variant="outline" className="border-compass-soft-purple text-compass-purple-darkest hover:bg-compass-soft-purple/20">
+                  <Link to="/creative-quest">
                     퀘스트 확인하기
-                  </Button>
-                </Link>
+                  </Link>
+                </Button>
               </div>
             </div>
           </div>
@@ -161,11 +160,11 @@ const Index = () => {
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
               MyAI Compass와 함께 AI 시대에도 나만의 방향을 잃지 않고 건설적으로 성장하는 여정을 시작하세요.
             </p>
-            <Link to="/reality-check">
-              <Button className="bg-compass-purple hover:bg-compass-purple-dark inline-flex h-12 items-center justify-center px-8 text-lg">
+            <Button asChild className="bg-compass-purple hover:bg-compass-purple-dark inline-flex h-12 items-center justify-center px-8 text-lg">
+              <Link to="/reality-check">
                 무료로 진단 시작하기
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           </div>
         </section>
       </main>

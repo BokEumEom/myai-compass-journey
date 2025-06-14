@@ -25,17 +25,17 @@ const Hero = () => {
               </p>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Link to="/reality-check">
-                <Button className="bg-compass-purple hover:bg-compass-purple-dark inline-flex h-12 items-center justify-center rounded-md px-6 font-medium text-white transition-colors">
+              <Button asChild className="bg-compass-purple hover:bg-compass-purple-dark inline-flex h-12 items-center justify-center rounded-md px-6 font-medium text-white transition-colors">
+                <Link to="/reality-check">
                   지금 진단 시작하기
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-              <Link to="/about">
-                <Button variant="outline" className="inline-flex h-12 items-center justify-center rounded-md border border-input bg-background px-6 font-medium text-compass-purple-darker hover:bg-compass-soft-purple transition-colors">
+                </Link>
+              </Button>
+              <Button asChild variant="outline" className="inline-flex h-12 items-center justify-center rounded-md border border-input bg-background px-6 font-medium text-compass-purple-darker hover:bg-compass-soft-purple transition-colors">
+                <Link to="/about">
                   더 알아보기
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </div>
           </div>
           <div className="flex items-center justify-center">

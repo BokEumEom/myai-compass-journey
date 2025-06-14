@@ -1,5 +1,14 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import {
   Card,
   CardContent,
@@ -18,7 +27,8 @@ import {
   Play, 
   Rocket,
   Lightbulb,
-  Users
+  Users,
+  Wand2,
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -40,12 +50,14 @@ const CreativeQuest = () => {
   const [completedQuests, setCompletedQuests] = useState<number[]>([]);
   const [activeQuest, setActiveQuest] = useState<Quest | null>(null);
   const [questProgress, setQuestProgress] = useState<{[key: number]: number}>({});
+  const [selectedQuest, setSelectedQuest] = useState<Quest | null>(null);
 
   const handleStartQuest = (quest: Quest) => {
     setActiveQuest(quest);
     if (!questProgress[quest.id]) {
       setQuestProgress(prev => ({ ...prev, [quest.id]: 0 }));
     }
+    setSelectedQuest(null); // Close modal on start
   };
 
   const handleStepComplete = (questId: number, stepIndex: number) => {
@@ -166,9 +178,10 @@ const CreativeQuest = () => {
             return (
               <Card 
                 key={quest.id} 
-                className={`border-compass-soft-purple shadow-lg transition-all duration-300 hover:shadow-xl ${
+                onClick={() => setSelectedQuest(quest)}
+                className={`border-compass-soft-purple shadow-lg transition-all duration-300 hover:shadow-xl cursor-pointer ${
                   isCompleted ? 'bg-green-50 border-green-200' : 
-                  isActive ? 'bg-compass-soft-purple border-compass-purple' : ''
+                  isActive ? 'bg-compass-soft-purple border-compass-purple' : 'hover:border-compass-purple'
                 }`}
               >
                 <CardHeader>
@@ -223,30 +236,89 @@ const CreativeQuest = () => {
                     )}
                   </div>
                 </CardContent>
-                <CardFooter>
-                  {isCompleted ? (
+              </Card>
+            );
+          })}
+        </div>
+        
+        {/* Quest Detail Modal */}
+        <Dialog open={!!selectedQuest} onOpenChange={(isOpen) => !isOpen && setSelectedQuest(null)}>
+          <DialogContent className="sm:max-w-[525px]">
+            {selectedQuest && (
+              <>
+                <DialogHeader>
+                  <DialogTitle className="text-2xl text-compass-purple-darkest">{selectedQuest.title}</DialogTitle>
+                  <DialogDescription>
+                    {selectedQuest.description}
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="py-4 space-y-6">
+                  <div className="flex flex-wrap gap-2">
+                    <Badge className={difficultyColors[selectedQuest.difficulty]}>
+                      {selectedQuest.difficulty === 'beginner' ? '초급' : 
+                       selectedQuest.difficulty === 'intermediate' ? '중급' : '고급'}
+                    </Badge>
+                    <Badge variant="outline" className="border-compass-soft-purple text-compass-purple-darker">
+                      {selectedQuest.category === 'creativity' ? '창의성' :
+                       selectedQuest.category === 'collaboration' ? '협업' : '스킬'}
+                    </Badge>
+                  </div>
+                  <div className="flex items-center text-sm text-compass-neutral-gray">
+                    <Clock className="h-4 w-4 mr-2" />
+                    예상 소요 시간: {selectedQuest.estimatedTime}
+                  </div>
+                  
+                  {selectedQuest.tools && selectedQuest.tools.length > 0 && (
+                    <div className="space-y-2">
+                      <h4 className="font-semibold text-compass-purple-darker flex items-center">
+                        <Wand2 className="h-4 w-4 mr-2" />
+                        추천 도구
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {selectedQuest.tools.map(tool => (
+                          <Badge key={tool} variant="secondary">{tool}</Badge>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  <div className="space-y-2">
+                    <h4 className="font-semibold text-compass-purple-darker">퀘스트 단계</h4>
+                    <ul className="space-y-2">
+                      {selectedQuest.steps.map((step, index) => (
+                        <li key={index} className="flex items-start space-x-3">
+                          <CheckCircle className="h-5 w-5 mt-0.5 text-compass-purple flex-shrink-0" />
+                          <span className="text-compass-neutral-gray">{step}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                <DialogFooter>
+                  {completedQuests.includes(selectedQuest.id) ? (
                     <Button disabled className="w-full bg-green-100 text-green-800">
                       <CheckCircle className="mr-2 h-4 w-4" />
                       완료됨
                     </Button>
-                  ) : isActive ? (
+                  ) : activeQuest?.id === selectedQuest.id ? (
                     <Button disabled className="w-full bg-compass-purple text-white">
                       진행 중...
                     </Button>
                   ) : (
                     <Button 
-                      onClick={() => handleStartQuest(quest)}
+                      onClick={() => handleStartQuest(selectedQuest)}
                       className="w-full bg-compass-purple hover:bg-compass-purple-dark"
                     >
                       <Play className="mr-2 h-4 w-4" />
                       퀘스트 시작
                     </Button>
                   )}
-                </CardFooter>
-              </Card>
-            );
-          })}
-        </div>
+                </DialogFooter>
+              </>
+            )}
+          </DialogContent>
+        </Dialog>
+
 
         {/* Tips Section */}
         <Card className="border-compass-soft-purple shadow-lg mt-8">

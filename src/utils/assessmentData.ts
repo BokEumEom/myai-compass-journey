@@ -197,7 +197,8 @@ export const creativeQuests = [
       "개인적인 의견과 인사이트 추가",
       "AI 도구로 피드백 요청",
       "피드백을 바탕으로 개선된 버전 작성"
-    ]
+    ],
+    tools: ["ChatGPT", "Notion AI"]
   },
   {
     id: 2,
@@ -212,7 +213,8 @@ export const creativeQuests = [
       "효과적인 프롬프트 개발",
       "실제 업무에 적용 및 테스트",
       "결과 분석 및 개선"
-    ]
+    ],
+    tools: ["ChatGPT", "Taskade"]
   },
   {
     id: 3,
@@ -227,7 +229,8 @@ export const creativeQuests = [
       "다양한 스타일의 컨셉 이미지 생성",
       "피드백 수집 및 개선",
       "최종 브랜드 이미지 완성"
-    ]
+    ],
+    tools: ["Midjourney", "DALL-E 3"]
   },
   {
     id: 4,
@@ -242,7 +245,8 @@ export const creativeQuests = [
       "AI와 함께 미래 시나리오 작성",
       "동료나 멘토와 공유",
       "피드백 기반 액션 플랜 수립"
-    ]
+    ],
+    tools: ["ChatGPT-4", "Gamma", "Claude"]
   }
 ];
 
